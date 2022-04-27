@@ -10,9 +10,6 @@ import SnapKit
 
 class AuthViewController: UIViewController {
   private let logoImageView = UIImageView(image: UIImage(named: "chatLogo"), contentMode: .scaleAspectFit)
-  private let googleLabel = UILabel(text: "Get started with")
-  private let emailLabel = UILabel(text: "Or sign up with")
-  private let loginLabel = UILabel(text: "Already onboard?")
   private let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true, fontSize: 20)
   private let emailButton = UIButton(title: "Email", backgroundColor: .black, titleColor: .white, isShadow: false, fontSize: 20)
   private let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .red, isShadow: true, fontSize: 20)
@@ -30,9 +27,9 @@ class AuthViewController: UIViewController {
       make.centerX.equalToSuperview()
     }
 
-    let googleFormView = ButtonFormView(label: googleLabel, btn: googleButton)
-    let emailFormView = ButtonFormView(label: emailLabel, btn: emailButton)
-    let loginFormView = ButtonFormView(label: loginLabel, btn: loginButton)
+    let googleFormView = ButtonFormView(label: UILabel(text: "Get started with"), btn: googleButton)
+    let emailFormView = ButtonFormView(label: UILabel(text: "Or sign up with"), btn: emailButton)
+    let loginFormView = ButtonFormView(label: UILabel(text: "Already onboard?"), btn: loginButton)
 
     let stackView = UIStackView(arrSubviews: [googleFormView, emailFormView, loginFormView], axis: .vertical, spacing: 40)
     view.addSubview(stackView)
