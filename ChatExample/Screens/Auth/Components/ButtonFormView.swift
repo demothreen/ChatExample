@@ -18,7 +18,7 @@ class ButtonFormView: UIView {
     btn.snp.makeConstraints { make in
       make.top.equalTo(label.snp.bottom).inset(-10)
       make.left.right.equalToSuperview()
-      make.height.equalTo(60)
+      make.height.equalTo(40)
       make.bottom.equalToSuperview()
     }
   }

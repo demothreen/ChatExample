@@ -10,9 +10,9 @@ import SnapKit
 
 class AuthViewController: UIViewController {
   private let logoImageView = UIImageView(image: UIImage(named: "chatLogo"), contentMode: .scaleAspectFit)
-  private let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true, fontSize: 20)
-  private let emailButton = UIButton(title: "Email", backgroundColor: .black, titleColor: .white, isShadow: false, fontSize: 20)
-  private let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .red, isShadow: true, fontSize: 20)
+  private let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true)
+  private let emailButton = UIButton(title: "Email", backgroundColor: .black, titleColor: .white)
+  private let loginButton = UIButton(title: "Login", backgroundColor: .white, titleColor: .red, isShadow: true)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,30 +30,17 @@ class AuthViewController: UIViewController {
     let googleFormView = ButtonFormView(label: UILabel(text: "Get started with"), btn: googleButton)
     let emailFormView = ButtonFormView(label: UILabel(text: "Or sign up with"), btn: emailButton)
     let loginFormView = ButtonFormView(label: UILabel(text: "Already onboard?"), btn: loginButton)
+    emailButton.addTarget(self, action: #selector(pressEmail), for: .touchUpInside)
 
-    let stackView = UIStackView(arrSubviews: [googleFormView, emailFormView, loginFormView], axis: .vertical, spacing: 40)
+    let stackView = UIStackView(arrSubviews: [googleFormView, emailFormView, loginFormView], axis: .vertical, spacing: 30)
     view.addSubview(stackView)
     stackView.snp.makeConstraints { make in
       make.top.equalTo(logoImageView.snp.bottom).inset(-80)
       make.left.right.equalToSuperview().inset(20)
     }
   }
-}
 
-import SwiftUI
-
-struct ViewControllerProvider: PreviewProvider {
-  static var previews: some View {
-    ContainerView().edgesIgnoringSafeArea(.all).previewInterfaceOrientation(.portraitUpsideDown)
-  }
-
-  struct ContainerView: UIViewControllerRepresentable {
-    let viewController = AuthViewController()
-    func makeUIViewController(context: Context) -> AuthViewController {
-      return viewController
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-
-    }
+  @objc private func pressEmail() {
+    present(SignUpVC(), animated: true)
   }
 }
