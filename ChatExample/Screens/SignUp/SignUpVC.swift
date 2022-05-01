@@ -7,8 +7,7 @@
 
 import UIKit
 
-class SignUpVC: UIViewController {
-
+class SignUpVC: BaseVC {
   let welcomeLabel = UILabel(text: "Welcome!", fontSize: 26)
   let emailLabel = UILabel(text: "Email")
   let passwordLabel = UILabel(text: "Password")
@@ -23,7 +22,6 @@ class SignUpVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
     setupUI()
   }
 

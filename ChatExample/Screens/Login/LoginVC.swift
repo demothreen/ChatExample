@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: BaseVC {
   let welcomeLabel = UILabel(text: "Welcome back!")
   let loginWithLabel = UILabel(text: "Login with")
   let orLabel = UILabel(text: "or")
@@ -29,8 +29,6 @@ class LoginVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    view.backgroundColor = .white
     setupConstraints()
   }
 

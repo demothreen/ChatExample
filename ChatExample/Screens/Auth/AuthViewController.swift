@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: BaseVC {
   private let logoImageView = UIImageView(image: UIImage(named: "chatLogo"), contentMode: .scaleAspectFit)
   private let googleButton = UIButton(title: "Google", backgroundColor: .white, titleColor: .black, isShadow: true)
   private let emailButton = UIButton(title: "Email", backgroundColor: .black, titleColor: .white)
@@ -16,7 +16,6 @@ class AuthViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
     setupContraints()
   }
 

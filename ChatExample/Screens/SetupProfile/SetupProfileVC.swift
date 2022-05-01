@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SetupProfileVC: UIViewController {
+class SetupProfileVC: BaseVC {
   let welcomeLabel = UILabel(text: "Set up profile!", fontSize: 26)
   let fullImageView = AddPhotoView()
   let fullNameLabel = UILabel(text: "Full name")
@@ -20,7 +20,6 @@ class SetupProfileVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
     setupUI()
   }
 
