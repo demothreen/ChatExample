@@ -22,4 +22,14 @@ extension UICollectionView {
     }
     return Cell()
   }
+
+  private func dequeueConfiguringCell<Cell: ConfiguringCell>(_ cell: Cell.Type, for indexPath: IndexPath) -> Cell {
+    return dequeueReusableCell(withReuseIdentifier: cell.reuseId, for: indexPath) as! Cell
+  }
+
+  func configure<T: ConfiguringCell>(cellType: T.Type, with value: MChat, for indexPath: IndexPath) -> T {
+    let cell = self.dequeueConfiguringCell(cellType, for: indexPath)
+    cell.configure(with: value)
+    return cell
+  }
 }

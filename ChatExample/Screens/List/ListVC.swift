@@ -56,6 +56,7 @@ class ListVC: UIViewController {
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: setCompositionalLayout())
     view.addSubview(collectionView)
     collectionView.frame = self.view.bounds
+    collectionView.registerCell(ActiveChatCell.self)
     collectionView.registerCell(UICollectionViewCell.self)
     collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     collectionView.backgroundColor = .mainWhite
@@ -69,9 +70,7 @@ class ListVC: UIViewController {
 
       switch section {
       case .activeChats:
-        let cell = collectionView.dequeueCell(UICollectionViewCell.self, for: indexPath)
-        cell.backgroundColor = .systemBlue
-        return cell
+        return collectionView.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
       case .waitingChats:
         let cell = collectionView.dequeueCell(UICollectionViewCell.self, for: indexPath)
         cell.backgroundColor = .blue
