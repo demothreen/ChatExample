@@ -26,6 +26,9 @@
 		4AD94FE1281E978D008C0A17 /* PeopleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FE0281E978D008C0A17 /* PeopleVC.swift */; };
 		4AD94FE3281FDB6D008C0A17 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FE2281FDB6D008C0A17 /* UIColor + Extension.swift */; };
 		4AD94FE6281FDBC5008C0A17 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AD94FE5281FDBC5008C0A17 /* Colors.xcassets */; };
+		4AD94FEB28206401008C0A17 /* activeChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AD94FE928206400008C0A17 /* activeChats.json */; };
+		4AD94FEC28206401008C0A17 /* waitingChats.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AD94FEA28206401008C0A17 /* waitingChats.json */; };
+		4AD94FEE28206466008C0A17 /* Bundle - Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FED28206466008C0A17 /* Bundle - Decodable.swift */; };
 		4AF2C1AD281877C600D9DDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1AC281877C600D9DDEF /* AppDelegate.swift */; };
 		4AF2C1AF281877C600D9DDEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1AE281877C600D9DDEF /* SceneDelegate.swift */; };
 		4AF2C1B1281877C600D9DDEF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1B0281877C600D9DDEF /* AuthViewController.swift */; };
@@ -72,6 +75,9 @@
 		4AD94FE0281E978D008C0A17 /* PeopleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleVC.swift; sourceTree = "<group>"; };
 		4AD94FE2281FDB6D008C0A17 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		4AD94FE5281FDBC5008C0A17 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		4AD94FE928206400008C0A17 /* activeChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activeChats.json; sourceTree = "<group>"; };
+		4AD94FEA28206401008C0A17 /* waitingChats.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = waitingChats.json; sourceTree = "<group>"; };
+		4AD94FED28206466008C0A17 /* Bundle - Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle - Decodable.swift"; sourceTree = "<group>"; };
 		4AF2C1A9281877C600D9DDEF /* ChatExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF2C1AC281877C600D9DDEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AF2C1AE281877C600D9DDEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 				4AD94FCF281E56A1008C0A17 /* SegmentedControl + Extension.swift */,
 				4AD94FD7281E6326008C0A17 /* UICollectionView + Extension.swift */,
 				4AD94FE2281FDB6D008C0A17 /* UIColor + Extension.swift */,
+				4AD94FED28206466008C0A17 /* Bundle - Decodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +239,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		4AD94FE8282063F0008C0A17 /* TempFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4AD94FE928206400008C0A17 /* activeChats.json */,
+				4AD94FEA28206401008C0A17 /* waitingChats.json */,
+			);
+			path = TempFiles;
+			sourceTree = "<group>";
+		};
 		4AF2C1A0281877C600D9DDEF = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +271,7 @@
 		4AF2C1AB281877C600D9DDEF /* ChatExample */ = {
 			isa = PBXGroup;
 			children = (
+				4AD94FE8282063F0008C0A17 /* TempFiles */,
 				4AD94FD4281E5AC5008C0A17 /* Common */,
 				4A424EE92819B24B00A8460C /* Screens */,
 				4A424EE22819A38A00A8460C /* Extensions */,
@@ -396,7 +413,9 @@
 			files = (
 				4AD94FE6281FDBC5008C0A17 /* Colors.xcassets in Resources */,
 				4AF2C1B9281877C700D9DDEF /* LaunchScreen.storyboard in Resources */,
+				4AD94FEC28206401008C0A17 /* waitingChats.json in Resources */,
 				4AF2C1B6281877C700D9DDEF /* Assets.xcassets in Resources */,
+				4AD94FEB28206401008C0A17 /* activeChats.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +453,7 @@
 				4AD94FD3281E5A71008C0A17 /* ListVC.swift in Sources */,
 				4AD94FCB281D9C93008C0A17 /* SetupProfileVC.swift in Sources */,
 				4AF2C1AD281877C600D9DDEF /* AppDelegate.swift in Sources */,
+				4AD94FEE28206466008C0A17 /* Bundle - Decodable.swift in Sources */,
 				4A424EF52819CDB400A8460C /* OneLineTextField.swift in Sources */,
 				4AF2C1AF281877C600D9DDEF /* SceneDelegate.swift in Sources */,
 				4AD94FD6281E5ADA008C0A17 /* BaseVC.swift in Sources */,
