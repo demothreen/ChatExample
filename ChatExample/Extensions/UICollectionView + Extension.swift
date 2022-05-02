@@ -16,13 +16,6 @@ extension UICollectionView {
     String(describing: cell)
   }
 
-  func dequeueCell<Cell: UICollectionViewCell>(_ cell: Cell.Type, for indexPath: IndexPath) -> Cell {
-    if let cell = dequeueReusableCell(withReuseIdentifier: String(describing: cell), for: indexPath) as? Cell {
-      return cell
-    }
-    return Cell()
-  }
-
   private func dequeueConfiguringCell<Cell: ConfiguringCell>(_ cell: Cell.Type, for indexPath: IndexPath) -> Cell {
     return dequeueReusableCell(withReuseIdentifier: String(describing: cell), for: indexPath) as! Cell
   }
