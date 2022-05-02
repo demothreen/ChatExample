@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListVC: BaseVC {
+class ListVC: UIViewController {
   var collectionView: UICollectionView = {
     let collView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     return collView
@@ -15,7 +15,20 @@ class ListVC: BaseVC {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .mainWhite
+    setupSearchBar()
     setupUI()
+  }
+
+  private func setupSearchBar() {
+    navigationController?.navigationBar.barTintColor = .lightGray
+    navigationController?.navigationBar.shadowImage = UIImage()
+    let searchVC = UISearchController(searchResultsController: nil)
+    searchVC.hidesNavigationBarDuringPresentation = false
+    searchVC.obscuresBackgroundDuringPresentation = false
+    searchVC.searchBar.delegate = self
+    navigationItem.searchController = searchVC
+    navigationItem.hidesSearchBarWhenScrolling = false
   }
 
   private func setupUI() {
@@ -23,9 +36,15 @@ class ListVC: BaseVC {
     collectionView.frame = self.view.bounds
     collectionView.registerCell(UICollectionViewCell.self)
     collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-    collectionView.backgroundColor = .white
+    collectionView.backgroundColor = .mainWhite
     collectionView.delegate = self
     collectionView.dataSource = self
+  }
+}
+
+extension ListVC: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    print("### searchtext", searchText)
   }
 }
 
@@ -41,6 +60,12 @@ extension ListVC: UICollectionViewDelegate, UICollectionViewDataSource {
   }
 }
 
+extension ListVC: UICollectionViewDelegateFlowLayout {
+  override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
+    return CGSize(width: view.frame.width, height: 64)
+  }
+}
+
 import SwiftUI
 
 struct ViewControllerProvider: PreviewProvider {
@@ -49,7 +74,7 @@ struct ViewControllerProvider: PreviewProvider {
   }
 
   struct ContainerView: UIViewControllerRepresentable {
-    let viewController = ListVC()
+    let viewController = MainTabBarController()
     func makeUIViewController(context: Context) -> UIViewController {
       return viewController
     }
