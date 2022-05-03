@@ -29,10 +29,25 @@ class LoginVC: BaseVC {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupConstraints()
+    setupUI()
+
+    loginButton.addTarget(self, action: #selector(loginButtonPress), for: .touchUpInside)
   }
 
-  private func setupConstraints() {
+  @objc private func loginButtonPress() {
+    AuthService.shared.login(
+      email: emailTextField.text!,
+      password: passwordTextField.text!) { (result) in
+        switch result {
+        case .success(_):
+          self.showAlert(with: "Успешно!", and: "Вы авторизованы!")
+        case .failure(let error):
+          self.showAlert(with: "Ошибка!", and: error.localizedDescription)
+        }
+      }
+  }
+
+  private func setupUI() {
     let loginWithView = ButtonFormView(label: loginWithLabel, btn: googleButton)
     let emailStackView = UIStackView(arrSubviews: [emailLabel, emailTextField], axis: .vertical, spacing: 0)
     let passwordStackView = UIStackView(arrSubviews: [passwordLabel, passwordTextField], axis: .vertical, spacing: 0)
@@ -68,7 +83,7 @@ class LoginVC: BaseVC {
       make.top.equalTo(welcomeLabel.snp.bottom).inset(-40)
       make.left.right.equalToSuperview().inset(40)
     }
-
+    
     bottomStackView.snp.makeConstraints { make in
       make.top.equalTo(stackView.snp.bottom).inset(-60)
       make.left.right.equalToSuperview().inset(40)

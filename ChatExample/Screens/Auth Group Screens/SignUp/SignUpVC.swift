@@ -23,6 +23,22 @@ class SignUpVC: BaseVC {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+
+    signUpBtn.addTarget(self, action: #selector(signUpBtnPress), for: .touchUpInside)
+  }
+
+  @objc private func signUpBtnPress() {
+    AuthService.shared.register(
+      email: emailTextField.text,
+      password: passwordTextField.text,
+      confirmPassword: confirmTextField.text) { (result) in
+        switch result {
+        case .success(let user):
+          self.showAlert(with: "Успешно!", and: "Вы зарегистрированны!")
+        case .failure(let error):
+          self.showAlert(with: "Ошибка!", and: error.localizedDescription)
+        }
+      }
   }
 
   private func setupUI() {
