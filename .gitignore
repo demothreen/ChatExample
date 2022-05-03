@@ -1,4 +1,4 @@
 .DS_Store
 xcuserdata/
 *.xcuserstate
-App/GoogleService-Info.plist
+ChatExample/App/GoogleService-Info.plist
