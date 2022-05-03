@@ -45,6 +45,9 @@
 		4AD9501928211AB4008C0A17 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AD9501828211AB4008C0A17 /* GoogleService-Info.plist */; };
 		4AD9501E282175F0008C0A17 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9501D282175F0008C0A17 /* AuthService.swift */; };
 		4AD950202821766B008C0A17 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9501F2821766B008C0A17 /* UIViewController.swift */; };
+		4AD9502428217AF5008C0A17 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9502228217AF5008C0A17 /* Validators.swift */; };
+		4AD9502528217AF5008C0A17 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9502328217AF5008C0A17 /* AuthError.swift */; };
+		4AD9502728217B48008C0A17 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9502628217B48008C0A17 /* String.swift */; };
 		4AF2C1AD281877C600D9DDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1AC281877C600D9DDEF /* AppDelegate.swift */; };
 		4AF2C1AF281877C600D9DDEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1AE281877C600D9DDEF /* SceneDelegate.swift */; };
 		4AF2C1B1281877C600D9DDEF /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1B0281877C600D9DDEF /* AuthVC.swift */; };
@@ -106,6 +109,9 @@
 		4AD9501828211AB4008C0A17 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AD9501D282175F0008C0A17 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4AD9501F2821766B008C0A17 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		4AD9502228217AF5008C0A17 /* Validators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		4AD9502328217AF5008C0A17 /* AuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		4AD9502628217B48008C0A17 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		4AF2C1A9281877C600D9DDEF /* ChatExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF2C1AC281877C600D9DDEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AF2C1AE281877C600D9DDEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				4AD94FE2281FDB6D008C0A17 /* UIColor + Extension.swift */,
 				4AD94FED28206466008C0A17 /* Bundle - Decodable.swift */,
 				4AD9501F2821766B008C0A17 /* UIViewController.swift */,
+				4AD9502628217B48008C0A17 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -334,6 +341,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		4AD9502128217AE9008C0A17 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4AD9502328217AF5008C0A17 /* AuthError.swift */,
+				4AD9502228217AF5008C0A17 /* Validators.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4AF2C1A0281877C600D9DDEF = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +373,7 @@
 		4AF2C1AB281877C600D9DDEF /* ChatExample */ = {
 			isa = PBXGroup;
 			children = (
+				4AD9502128217AE9008C0A17 /* Helpers */,
 				4AD9501C282175E2008C0A17 /* Services */,
 				4AD94FFB2821045F008C0A17 /* Models */,
 				4AD94FF628207A85008C0A17 /* App */,
@@ -535,6 +552,7 @@
 				4AD94FC8281D95A5008C0A17 /* LoginVC.swift in Sources */,
 				4A424EE82819AFFD00A8460C /* UIImageView + Extension.swift in Sources */,
 				4AD94FE1281E978D008C0A17 /* PeopleVC.swift in Sources */,
+				4AD9502428217AF5008C0A17 /* Validators.swift in Sources */,
 				4AD94FDE281E9720008C0A17 /* MainTabBarController.swift in Sources */,
 				4AD94FD8281E6326008C0A17 /* UICollectionView + Extension.swift in Sources */,
 				4AD9500328210689008C0A17 /* UserCell.swift in Sources */,
@@ -544,6 +562,7 @@
 				4A424EEC2819B27500A8460C /* ButtonFormView.swift in Sources */,
 				4A424EE62819AA0200A8460C /* UILabel + Extension.swift in Sources */,
 				4AD94FE3281FDB6D008C0A17 /* UIColor + Extension.swift in Sources */,
+				4AD9502728217B48008C0A17 /* String.swift in Sources */,
 				4AD94FD3281E5A71008C0A17 /* ListVC.swift in Sources */,
 				4AD94FCB281D9C93008C0A17 /* SetupProfileVC.swift in Sources */,
 				4AD950082821097E008C0A17 /* InsertableTextField.swift in Sources */,
@@ -557,6 +576,7 @@
 				4AD94FF828207C18008C0A17 /* WaitingChatCell.swift in Sources */,
 				4A424EE42819A3A200A8460C /* UIButton + Extension.swift in Sources */,
 				4AD94FFA28210054008C0A17 /* SectionHeader.swift in Sources */,
+				4AD9502528217AF5008C0A17 /* AuthError.swift in Sources */,
 				4AD94FFD28210474008C0A17 /* MChat.swift in Sources */,
 				4AD950202821766B008C0A17 /* UIViewController.swift in Sources */,
 				4AD94FF3282070DF008C0A17 /* ActiveChatCell.swift in Sources */,
