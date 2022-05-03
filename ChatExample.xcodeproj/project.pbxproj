@@ -32,6 +32,12 @@
 		4AD94FF3282070DF008C0A17 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FF2282070DF008C0A17 /* ActiveChatCell.swift */; };
 		4AD94FF828207C18008C0A17 /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FF728207C18008C0A17 /* WaitingChatCell.swift */; };
 		4AD94FFA28210054008C0A17 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FF928210054008C0A17 /* SectionHeader.swift */; };
+		4AD94FFD28210474008C0A17 /* MChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FFC28210474008C0A17 /* MChat.swift */; };
+		4AD94FFF28210494008C0A17 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD94FFE28210494008C0A17 /* MUser.swift */; };
+		4AD9500128210558008C0A17 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AD9500028210558008C0A17 /* users.json */; };
+		4AD9500328210689008C0A17 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9500228210689008C0A17 /* UserCell.swift */; };
+		4AD9500628210926008C0A17 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9500528210926008C0A17 /* ProfileVC.swift */; };
+		4AD950082821097E008C0A17 /* InsertableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD950072821097E008C0A17 /* InsertableTextField.swift */; };
 		4AF2C1AD281877C600D9DDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1AC281877C600D9DDEF /* AppDelegate.swift */; };
 		4AF2C1AF281877C600D9DDEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1AE281877C600D9DDEF /* SceneDelegate.swift */; };
 		4AF2C1B1281877C600D9DDEF /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF2C1B0281877C600D9DDEF /* AuthViewController.swift */; };
@@ -84,6 +90,12 @@
 		4AD94FF2282070DF008C0A17 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		4AD94FF728207C18008C0A17 /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		4AD94FF928210054008C0A17 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		4AD94FFC28210474008C0A17 /* MChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MChat.swift; sourceTree = "<group>"; };
+		4AD94FFE28210494008C0A17 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		4AD9500028210558008C0A17 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		4AD9500228210689008C0A17 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		4AD9500528210926008C0A17 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		4AD950072821097E008C0A17 /* InsertableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertableTextField.swift; sourceTree = "<group>"; };
 		4AF2C1A9281877C600D9DDEF /* ChatExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF2C1AC281877C600D9DDEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AF2C1AE281877C600D9DDEF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,11 +222,12 @@
 		4AD94FD1281E5A64008C0A17 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				4AD9500428210905008C0A17 /* Components */,
 				4AD94FF1282070D1008C0A17 /* Cells */,
 				4AD94FD2281E5A71008C0A17 /* ListVC.swift */,
 				4AD94FDD281E9720008C0A17 /* MainTabBarController.swift */,
 				4AD94FE0281E978D008C0A17 /* PeopleVC.swift */,
-				4AD94FF928210054008C0A17 /* SectionHeader.swift */,
+				4AD9500528210926008C0A17 /* ProfileVC.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -250,6 +263,7 @@
 		4AD94FE8282063F0008C0A17 /* TempFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4AD9500028210558008C0A17 /* users.json */,
 				4AD94FE928206400008C0A17 /* activeChats.json */,
 				4AD94FEA28206401008C0A17 /* waitingChats.json */,
 			);
@@ -259,6 +273,7 @@
 		4AD94FF1282070D1008C0A17 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4AD9500228210689008C0A17 /* UserCell.swift */,
 				4AD94FF2282070DF008C0A17 /* ActiveChatCell.swift */,
 				4AD94FF728207C18008C0A17 /* WaitingChatCell.swift */,
 			);
@@ -275,6 +290,24 @@
 				4AF2C1BA281877C700D9DDEF /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		4AD94FFB2821045F008C0A17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4AD94FFC28210474008C0A17 /* MChat.swift */,
+				4AD94FFE28210494008C0A17 /* MUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4AD9500428210905008C0A17 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4AD950072821097E008C0A17 /* InsertableTextField.swift */,
+				4AD94FF928210054008C0A17 /* SectionHeader.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		4AF2C1A0281877C600D9DDEF = {
@@ -300,6 +333,7 @@
 		4AF2C1AB281877C600D9DDEF /* ChatExample */ = {
 			isa = PBXGroup;
 			children = (
+				4AD94FFB2821045F008C0A17 /* Models */,
 				4AD94FF628207A85008C0A17 /* App */,
 				4AD94FE8282063F0008C0A17 /* TempFiles */,
 				4AD94FD4281E5AC5008C0A17 /* Common */,
@@ -436,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD9500128210558008C0A17 /* users.json in Resources */,
 				4AD94FE6281FDBC5008C0A17 /* Colors.xcassets in Resources */,
 				4AF2C1B9281877C700D9DDEF /* LaunchScreen.storyboard in Resources */,
 				4AD94FEC28206401008C0A17 /* waitingChats.json in Resources */,
@@ -470,15 +505,19 @@
 				4AD94FE1281E978D008C0A17 /* PeopleVC.swift in Sources */,
 				4AD94FDE281E9720008C0A17 /* MainTabBarController.swift in Sources */,
 				4AD94FD8281E6326008C0A17 /* UICollectionView + Extension.swift in Sources */,
+				4AD9500328210689008C0A17 /* UserCell.swift in Sources */,
 				4A424EF22819C46A00A8460C /* SignUpVC.swift in Sources */,
+				4AD94FFF28210494008C0A17 /* MUser.swift in Sources */,
 				4AF2C1B1281877C600D9DDEF /* AuthViewController.swift in Sources */,
 				4A424EEC2819B27500A8460C /* ButtonFormView.swift in Sources */,
 				4A424EE62819AA0200A8460C /* UILabel + Extension.swift in Sources */,
 				4AD94FE3281FDB6D008C0A17 /* UIColor + Extension.swift in Sources */,
 				4AD94FD3281E5A71008C0A17 /* ListVC.swift in Sources */,
 				4AD94FCB281D9C93008C0A17 /* SetupProfileVC.swift in Sources */,
+				4AD950082821097E008C0A17 /* InsertableTextField.swift in Sources */,
 				4AF2C1AD281877C600D9DDEF /* AppDelegate.swift in Sources */,
 				4AD94FEE28206466008C0A17 /* Bundle - Decodable.swift in Sources */,
+				4AD9500628210926008C0A17 /* ProfileVC.swift in Sources */,
 				4A424EF52819CDB400A8460C /* OneLineTextField.swift in Sources */,
 				4AF2C1AF281877C600D9DDEF /* SceneDelegate.swift in Sources */,
 				4AD94FD6281E5ADA008C0A17 /* BaseVC.swift in Sources */,
@@ -486,6 +525,7 @@
 				4AD94FF828207C18008C0A17 /* WaitingChatCell.swift in Sources */,
 				4A424EE42819A3A200A8460C /* UIButton + Extension.swift in Sources */,
 				4AD94FFA28210054008C0A17 /* SectionHeader.swift in Sources */,
+				4AD94FFD28210474008C0A17 /* MChat.swift in Sources */,
 				4AD94FF3282070DF008C0A17 /* ActiveChatCell.swift in Sources */,
 				4AD94FD0281E56A1008C0A17 /* SegmentedControl + Extension.swift in Sources */,
 				4A424EEE2819B4E300A8460C /* StackView + Extension.swift in Sources */,

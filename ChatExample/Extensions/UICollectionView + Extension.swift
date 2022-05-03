@@ -20,7 +20,14 @@ extension UICollectionView {
     return dequeueReusableCell(withReuseIdentifier: String(describing: cell), for: indexPath) as! Cell
   }
 
-  func configure<T: ConfiguringCell>(cellType: T.Type, with value: MChat, for indexPath: IndexPath) -> T {
+  func dequeueCell<Cell: UICollectionViewCell>(_ cell: Cell.Type, for indexPath: IndexPath) -> Cell {
+    if let cell = dequeueReusableCell(withReuseIdentifier: String(describing: cell), for: indexPath) as? Cell {
+      return cell
+    }
+    return Cell()
+  }
+
+  func configure<T: ConfiguringCell, U: Hashable>(cellType: T.Type, with value: U, for indexPath: IndexPath) -> T {
     let cell = self.dequeueConfiguringCell(cellType, for: indexPath)
     cell.configure(with: value)
     return cell
