@@ -155,19 +155,3 @@ extension ListVC: UISearchBarDelegate {
     print("### searchtext", searchText)
   }
 }
-
-import SwiftUI
-
-struct ViewControllerProvider: PreviewProvider {
-  static var previews: some View {
-    ContainerView().edgesIgnoringSafeArea(.all).previewInterfaceOrientation(.portraitUpsideDown)
-  }
-
-  struct ContainerView: UIViewControllerRepresentable {
-    let viewController = MainTabBarController()
-    func makeUIViewController(context: Context) -> UIViewController {
-      return viewController
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-  }
-}
