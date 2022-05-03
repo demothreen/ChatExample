@@ -17,6 +17,22 @@ class AuthViewController: BaseVC {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupContraints()
+
+    googleButton.addTarget(self, action: #selector(googleButtonPress), for: .touchUpInside)
+    emailButton.addTarget(self, action: #selector(emailButtonPress), for: .touchUpInside)
+    loginButton.addTarget(self, action: #selector(loginButtonPress), for: .touchUpInside)
+  }
+
+  @objc private func googleButtonPress() {
+    print(#function)
+  }
+
+  @objc private func emailButtonPress() {
+    print(#function)
+  }
+
+  @objc private func loginButtonPress() {
+    print(#function)
   }
 
   private func setupContraints() {
@@ -29,7 +45,6 @@ class AuthViewController: BaseVC {
     let googleFormView = ButtonFormView(label: UILabel(text: "Get started with"), btn: googleButton)
     let emailFormView = ButtonFormView(label: UILabel(text: "Or sign up with"), btn: emailButton)
     let loginFormView = ButtonFormView(label: UILabel(text: "Already onboard?"), btn: loginButton)
-    emailButton.addTarget(self, action: #selector(pressEmail), for: .touchUpInside)
 
     let stackView = UIStackView(arrSubviews: [googleFormView, emailFormView, loginFormView], axis: .vertical, spacing: 30)
     view.addSubview(stackView)
@@ -37,9 +52,5 @@ class AuthViewController: BaseVC {
       make.top.equalTo(logoImageView.snp.bottom).inset(-80)
       make.left.right.equalToSuperview().inset(20)
     }
-  }
-
-  @objc private func pressEmail() {
-    present(SignUpVC(), animated: true)
   }
 }
